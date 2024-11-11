@@ -31,13 +31,8 @@ export default function BiometricAuth() {
               { alg: -8, type: "public-key" },
               { alg: -257, type: "public-key" },
             ],
-            authenticatorSelection: {
-              authenticatorAttachment: "platform",
-              residentKey: "required",
-              userVerification: "required",
-            },
             timeout: 60000,
-            attestation: "direct",
+            attestation: "none",
           };
 
         const credential = await navigator.credentials.create({
