@@ -4,7 +4,7 @@ import mkcert from "vite-plugin-mkcert";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/rect-biometric-auth/",
+  base: "/react-biometric-auth/",
   plugins: [react(), mkcert()],
   server: {
     port: 8585,
