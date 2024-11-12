@@ -34,7 +34,7 @@ export default function BiometricAuth() {
       const publicKeyCredentialCreationOptions: PublicKeyCredentialCreationOptions =
         {
           challenge: challenge,
-          rp: { name: "Example RP" },
+          rp: { id: "mhrastegari.github.io", name: "MHR Auth" },
           user: {
             id: new Uint8Array([
               0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,
@@ -47,6 +47,10 @@ export default function BiometricAuth() {
             { type: "public-key", alg: -8 },
             { type: "public-key", alg: -257 },
           ],
+          authenticatorSelection: {
+            authenticatorAttachment: "platform",
+            requireResidentKey: false,
+          },
           timeout: 60000,
           attestation: "none",
         };
