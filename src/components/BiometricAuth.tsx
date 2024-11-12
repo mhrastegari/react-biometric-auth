@@ -47,9 +47,6 @@ export default function BiometricAuth() {
             { type: "public-key", alg: -8 },
             { type: "public-key", alg: -257 },
           ],
-          authenticatorSelection: {
-            authenticatorAttachment: "cross-platform",
-          },
           timeout: 60000,
           attestation: "none",
         };
