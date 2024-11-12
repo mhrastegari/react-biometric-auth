@@ -3,7 +3,7 @@ name: Deploy React Biometric auth
 on:
   push:
     branches:
-      - main
+      - fix-ios-issues
 
 jobs:
   build:
