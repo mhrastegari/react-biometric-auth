@@ -6,7 +6,6 @@ export default function BiometricAuth() {
   const [password, setPassword] = useState<string>("");
   const [isBiometricEnabled, setIsBiometricEnabled] = useState<boolean>(false);
 
-  // Function to handle traditional username/password login
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     if (username && password) {
@@ -49,10 +48,14 @@ export default function BiometricAuth() {
           ],
           authenticatorSelection: {
             authenticatorAttachment: "platform",
-            requireResidentKey: false,
+            residentKey: "preferred",
+            userVerification: "preferred",
           },
           timeout: 60000,
-          attestation: "none",
+          attestation: "direct",
+          extensions: {
+            credProps: true,
+          },
         };
 
       const credential = await navigator.credentials.create({
